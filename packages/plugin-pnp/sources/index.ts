@@ -16,7 +16,7 @@ export const getPnpPath = (project: Project) => {
   let mainFilename;
   let otherFilename;
 
-  if (project.topLevelWorkspace.manifest.type === `module`) {
+  if (project.configuration.get(`enableExperimentalESMLoader`) === true || project.topLevelWorkspace.manifest.type === `module`) {
     mainFilename = `.pnp.cjs`;
     otherFilename = `.pnp.js`;
   } else {

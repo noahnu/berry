@@ -264,7 +264,7 @@ export class PnpInstaller implements Installer {
 
     await xfs.removePromise(pnpPath.other);
 
-    if (this.opts.project.topLevelWorkspace.manifest.type !== `module`)
+    if (this.opts.project.configuration.get(`enableExperimentalESMLoader`) !== true || this.opts.project.topLevelWorkspace.manifest.type !== `module`)
       await xfs.removePromise(pnpPath.esmLoader);
 
     if (this.opts.project.configuration.get(`nodeLinker`) !== `pnp`) {
