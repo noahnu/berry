@@ -27,7 +27,7 @@ export const getPnpPath = (project: Project) => {
   return {
     main: ppath.join(project.cwd, mainFilename as Filename),
     other: ppath.join(project.cwd, otherFilename as Filename),
-    esmLoader: ppath.join(project.cwd, `experimental-pnp-esm-loader.js` as Filename),
+    esmLoader: ppath.join(project.cwd, `experimental-pnp-esm-loader.mjs` as Filename),
   };
 };
 
